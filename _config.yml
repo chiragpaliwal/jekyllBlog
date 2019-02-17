@@ -35,7 +35,8 @@ defaults:
     values:
       layout: page
       
-      
+keep_files: [assets]
+
 # Syntax
 markdown: kramdown
 highlighter: rouge

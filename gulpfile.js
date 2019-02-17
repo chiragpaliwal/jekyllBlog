@@ -63,7 +63,7 @@ gulp.task('watch-js', ['js-rebuild'], function() {
 
 // watch just the image files
 gulp.task('watch-images', ['images-rebuild'], function() {
-     gulp.watch(['_assets/img/**/*.*'], ['images-rebuild']);
+     gulp.watch(['_assets/images/**/*.*'], ['images-rebuild']);
 });
 
 //if sass files change just rebuild them with gulp-sass and what not
@@ -72,7 +72,7 @@ gulp.task('sass-rebuild', function() {
         autoprefixer({browsers: ['last 2 version']}),
         cssnano()
     ];
-     return gulp.src('_assets/sass/**/*.scss')
+     return gulp.src('_assets/css/**/*.css')
     .pipe(sourcemaps.init())
     // .pipe(sass())
     .pipe(sourcemaps.init())
@@ -95,8 +95,8 @@ gulp.task('js-rebuild', function(cb) {
 
 gulp.task('images-rebuild', function(cb) {
    
-     return gulp.src('_assets/img/**/*.*')
-      .pipe( gulp.dest('_site/assets/img/') )
+     return gulp.src('_assets/images/**/*.*')
+      .pipe( gulp.dest('_site/assets/images/') )
       .pipe(browserSync.reload({
       stream: true
     }))
@@ -112,7 +112,7 @@ gulp.task('default', ['serve', 'watch','watch-sass','watch-js','watch-images']);
 //build and deploy stuff
 gulp.task('imagemin', function() {
     console.log('Minimizing images in source!!');
- return gulp.src('_assets/img/**/*')
+ return gulp.src('_assets/images/**/*')
     .pipe(imagemin())
     .pipe(gulp.dest(function (file) {
         return file.base;
