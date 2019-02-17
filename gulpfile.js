@@ -108,7 +108,7 @@ gulp.task('images-rebuild', function(cb) {
  */
 gulp.task('default', ['serve', 'watch','watch-sass','watch-js','watch-images']);
 
-gulp.task('build', ['jekyll-build', 'sass-rebuild', 'js-rebuild', 'images-rebuild']);
+gulp.task('build', ['jekyll-build', 'sass-rebuild', 'js-rebuild']);
 
 //build and deploy stuff
 gulp.task('imagemin', function() {
