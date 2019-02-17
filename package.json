@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "jekyll-build": "jekyll build",
-    "gulp-build": "gulp build"
+    "build": "jekyll build && gulp build"
   },
   "repository": {
     "type": "git",
